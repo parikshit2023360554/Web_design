@@ -1,0 +1,66 @@
+.box{
+    /* background-color: aqua; */
+    /* width: 100px; */
+    margin: 80px auto;
+    padding:10px;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+.image{
+    width: 400px;
+    margin-bottom: 10px;
+    
+    
+}
+.welcome{
+    margin-bottom: 30px;
+    font-size: 20px;
+
+}
+.eamil{
+    width: 200px;
+    margin-bottom: 20px;
+    font-size: medium;
+    border: 1px solid rgb(207, 194, 194);
+    padding: 20px 30px;
+    border-radius: 10px;
+
+
+}
+.password{
+    width: 200px;
+    margin-bottom: 20px;
+    font-size: medium;
+    border: 1px solid rgb(207, 194, 194);
+    padding: 20px 30px;
+    border-radius: 10px;
+
+}
+.button{
+    background-color: black;
+    color: white;
+    margin-bottom: 30px;
+    padding: 18px 40px;
+    border-radius: 40px;
+    position: sticky;
+    top: 0;
+
+}
+.signup{
+    margin-bottom: 10px;
+
+
+}
+.forgot{
+    margin-bottom: 100px;
+
+}
+.para{
+    margin-bottom: 10px;
+
+}
+.para1{
+    margin-bottom: 10px; 
+
+}
