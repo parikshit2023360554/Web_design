@@ -1,0 +1,48 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Registration Form with Enhanced Animations</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form-container">
+        <form id="registrationForm" class="animated-form">
+            <h2><span class="typing-effect">Sign Up</span></h2>
+
+            <div class="input-group">
+                <input type="text" id="name" name="name" required>
+                <label for="name">Name</label>
+                <small class="error" id="nameError"></small>
+            </div>
+
+            <div class="input-group">
+                <input type="email" id="email" name="email" required>
+                <label for="email">Email</label>
+                <small class="error" id="emailError"></small>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" name="password" required>
+                <label for="password">Password</label>
+                <small class="error" id="passwordError"></small>
+            </div>
+
+            <div class="input-group">
+                <input type="tel" id="phone" name="phone" required>
+                <label for="phone">Phone</label>
+                <small class="error" id="phoneError"></small>
+            </div>
+
+            <button type="submit" class="submit-btn ripple-effect">Register</button>
+        </form>
+    </div>
+
+    <!-- Link to JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
