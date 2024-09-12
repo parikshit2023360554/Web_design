@@ -97,6 +97,9 @@ else{
     console.log(random+" the user in not eligible for vote");
 }
 
+//funciton 
+
+
 
 
 
