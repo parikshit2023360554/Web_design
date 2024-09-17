@@ -1,0 +1,33 @@
+.main{
+    width: 400px;
+    margin: 200px auto;
+}
+
+.get{
+}
+
+.dice{
+    background: rgb(184, 183, 183);
+    /* border: 1px solid black; */
+    font-size: 20px;
+    font: bold;
+    border-radius: 10px;
+    width:20px;
+    padding: 40px;
+    text-align: center;
+    margin-bottom: 20px;
+    animation: dice 1s spin;
+}
+
+.spin{
+    border: 1px solid black;
+    background: black;
+    color: white;
+    padding: 20px 35px;
+}
+
+
+@keyframes dice{
+    
+    
+}
