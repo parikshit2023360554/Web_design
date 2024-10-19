@@ -50,6 +50,34 @@
     
 }
 
+.success{
+    color: green;
+    background: rgb(201, 246, 201);
+
+
+}
+
+.danger{
+    color: red;
+    background: rgb(255, 204, 204);
+    
+
+}
+
+.alert{ 
+    /* border: 2px solid black ;  */ 
+
+    padding: 20px 40px; 
+    border-radius: 20px;
+    width: 200px;
+    position: absolute; 
+    top: 4px ; 
+    right: 3px ;  
+  
+
+
+}
+
 .sub-display{
     padding: 20px;
 
