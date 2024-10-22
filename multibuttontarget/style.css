@@ -1,0 +1,21 @@
+.flex { 
+    display: flex;
+    gap: 30px;
+}
+.filter{
+    padding: 20px 40px; 
+    border-radius: 10px;
+}
+.btn{ 
+    padding: 20px 40px ;
+    background: black;
+    color: white; 
+    border-radius: 10px;
+}
+
+
+.btn-clicked { 
+    background-color: gray;
+    border: none;
+    color: white;
+}
