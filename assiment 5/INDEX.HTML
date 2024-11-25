@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Distribution Chart</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h2>Expense Distribution</h2>
+  
+  <!-- Input for total amount -->
+  <label for="totalAmount">Total Amount:</label>
+  <input type="number" id="totalAmount" placeholder="Enter your total amount" required>
+  <br><br>
+
+  <!-- Inputs for adding each item -->
+  <label for="category">Category:</label>
+  <input type="text" id="category" placeholder="e.g., Food" required>
+  <label for="amount">Amount:</label>
+  <input type="number" id="amount" placeholder="e.g., 10" required>
+  <button onclick="addItem()">Add Item</button>
+  <br><br>
+
+  <!-- List to display added items -->
+  <ul id="itemList"></ul>
+
+  <!-- Canvas element where the chart will be rendered -->
+  <canvas id="expenseChart" width="400" height="200"></canvas>
+
+  <script>
+    // Arrays to store category labels and amounts
+    const labels = [];
+    const values = [];
+    let chart = null;
+
+    // Function to add each item to the list and update the chart
+    function addItem() {
+      const category = document.getElementById('category').value;
+      const amount = parseFloat(document.getElementById('amount').value);
+      const totalAmount = parseFloat(document.getElementById('totalAmount').value);
+
+      if (!category || isNaN(amount) || amount <= 0 || isNaN(totalAmount) || totalAmount <= 0) {
+        alert("Please enter a valid category, amount, and total amount.");
+        return;
+      }
+
+      // Calculate the percentage of the amount based on the total amount
+      const percentage = ((amount / totalAmount) * 100).toFixed(2);
+
+      // Add the category and amount to the arrays
+      labels.push(category);
+      values.push(amount);
+
+      // Display the added item in the list with the percentage
+      const itemList = document.getElementById('itemList');
+      const listItem = document.createElement('li');
+      listItem.textContent = `${category}: $${amount} (${percentage}%)`;
+      itemList.appendChild(listItem);
+
+      // Clear the input fields
+      document.getElementById('category').value = '';
+      document.getElementById('amount').value = '';
+
+      // Update the chart
+      updateChart(totalAmount);
+    }
+
+    // Function to create or update the chart using Chart.js
+    function updateChart(totalAmount) {
+      const usedAmount = values.reduce((a, b) => a + b, 0);
+      const percentages = values.map(value => (value / totalAmount) * 100);
+      const remainingAmount = totalAmount - usedAmount;
+
+      // If there's any remaining amount, add it as a new category
+      let chartLabels = [...labels];
+      let chartData = [...percentages];
+      if (remainingAmount > 0) {
+        chartLabels.push("Remaining");
+        chartData.push((remainingAmount / totalAmount) * 100);
+      }
+
+      const ctx = document.getElementById('expenseChart').getContext('2d');
+      
+      // Check if a chart instance already exists
+      if (chart) {
+        chart.destroy(); // Destroy the previous chart before creating a new one
+      }
+
+      // Create a new chart instance
+      chart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: chartLabels,
+          datasets: [{
+            label: 'Expense Distribution (%)',
+            data: chartData,
+            backgroundColor: 'skyblue'
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (context) => `${context.raw.toFixed(2)}%`
+              }
+            }
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              max: 100,
+              title: {
+                display: true,
+                text: 'Percentage (%)'
+              },
+              grid: {
+                color: 'rgba(0, 0, 0, 0.1)',
+                borderDash: [5, 5]
+              }
+            },
+            x: {
+              title: {
+                display: true,
+                text: 'Categories'
+              }
+            }
+          }
+        }
+      });
+    }
+  </script>
+</body>
+</html>

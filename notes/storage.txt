@@ -1,0 +1,26 @@
+task1 - > create a page taking input name and store it in the local storage  
+		 use addeventlistner 
+		localStorage.setItem 
+		and after entring a message 
+
+
+ how to covert into a string 
+
+ JSON.stringify - it is use to convert any datatype into the string 
+ JSON.parse - it will remove the string which it was been converted 
+
+ setItem - to set the or add the name of the variable in the localStorage or sessionstorage
+ getItem - to get the item stored in the storage 
+
+
+ task 2- create a counter using session storage 
+
+keep in mind -- in local storage or session storage the value is stored in the string weather 
+it is int or a object  
+
+to conver to int use parseInt() ;
+
+
+
+
+

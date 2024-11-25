@@ -39,7 +39,7 @@ images.forEach((image, index) => {
     loader.classList.add("loader");
     loader.classList.remove("hidden");
 
-    // When the image is loaded
+    // When the image is loaded      
     image.addEventListener("load", () => {
         loader.classList.remove("loader");
         loader.classList.add("hidden");
