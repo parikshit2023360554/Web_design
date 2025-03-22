@@ -1,11 +1,11 @@
 //----------set-1--------------------------------
-// function complited(){
-//     let comp = document.getElementById('cong')
-//     console.log(comp)
-//     comp.innerText='Congaratulation 🤩 You Made IT........'
-//     let but = document.getElementById('but');
-//     but.style.display='none'
-// }
+function complited(){
+    let comp = document.getElementById('cong')
+    console.log(comp)
+    comp.innerText='Congaratulation 🤩 You Made IT........'
+    let but = document.getElementById('but');
+    but.style.display='none'
+}
 
 
 // ----------------------set-2-------------------------------
